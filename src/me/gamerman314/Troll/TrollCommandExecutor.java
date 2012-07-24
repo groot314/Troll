@@ -144,30 +144,49 @@ public class TrollCommandExecutor implements CommandExecutor {
 
             }
         }
-        
-         if(cmd.getName().equalsIgnoreCase("trolledAll"))
-            if(sender instanceof Player)
-            {
-                if(player.hasPermission("troll.trolled.all"))
-                {
-                    if(args.length == 0) {
+
+        //command tralledall 
+        if (cmd.getName().equalsIgnoreCase("trolledAll")) {
+            if (sender instanceof Player) {
+                if (player.hasPermission("troll.trolled.all")) {
+                    if (args.length == 0) {
                         Bukkit.getServer().broadcastMessage((new StringBuilder()).append(player.getDisplayName()).append(ChatColor.GRAY).append(" trolled everybody.").toString());
                         return true;
                     }
-                    if(args.length > 0)
+                    if (args.length > 0) {
                         return false;
-                } else
-                {
+                    }
+                } else {
                     player.sendMessage((new StringBuilder()).append(ChatColor.RED).append("You dont have permission to that command").toString());
                     return true;
                 }
-            } else
-            {
+            } else {
                 sender.sendMessage((new StringBuilder()).append(ChatColor.RED).append("You have to be in the game to use this command you N00B").toString());
                 return true;
             }
+        }
         
-        
+        if (cmd.getName().equalsIgnoreCase("superTroll")){
+            if (sender instanceof Player) {
+                if (player.hasPermission("troll.superTroll")) {
+                    if (args.length == 0) {
+                        Bukkit.getServer().broadcastMessage((new StringBuilder()).append(player.getDisplayName()).append(ChatColor.GRAY).append(" is a Super Troll").toString());
+                        return true;
+                    }
+                    if (args.length > 0) {
+                        return false;
+                    }
+                } else {
+                    player.sendMessage((new StringBuilder()).append(ChatColor.RED).append("You dont have permission to that command").toString());
+                    return true;
+                }
+            } else {
+                sender.sendMessage((new StringBuilder()).append(ChatColor.RED).append("You have to be in the game to use this command you N00B").toString());
+                return true;
+            }
+        }
+
+
         return false;
     }
 }

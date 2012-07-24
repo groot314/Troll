@@ -12,15 +12,12 @@ package me.gamerman314.Troll;
  */
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Troll extends JavaPlugin
-{
-
-    public Troll()
-    {
+public class Troll extends JavaPlugin {
+    
+    public Troll() {
     }
-
-    public void onEnable()
-    {
+    
+    public void onEnable() {
         trollExecutor = new TrollCommandExecutor(this);
         rollExecutor = new RollCommandExecutor(this);
         getCommand("troll").setExecutor(trollExecutor);
@@ -29,20 +26,18 @@ public class Troll extends JavaPlugin
         getCommand("trolledall").setExecutor(trollExecutor);
         getCommand("facepalm").setExecutor(trollExecutor);
         getCommand("barrelroll").setExecutor(rollExecutor);
+        getCommand("superTroll").setExecutor(rollExecutor);
         pluginInfo("Enabled!");
     }
-
-    public void onDisable()
-    {
+    
+    public void onDisable() {
         pluginInfo("Disabled!");
     }
-
-    public static void pluginInfo(String message)
-    {
+    
+    public static void pluginInfo(String message) {
         String v = "1.2";
         System.out.println((new StringBuilder()).append("[Troll] Troll Plugin ").append(v).append(" ").append(message).toString());
     }
-
     private TrollCommandExecutor trollExecutor;
     private RollCommandExecutor rollExecutor;
 }

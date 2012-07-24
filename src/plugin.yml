@@ -23,6 +23,9 @@ permissions:
   troll.barrelroll:
     decripton: Alows you to do barrel rolls.
     default: true
+  troll.superTroll:
+    dectription: Alows you to say your a Super Troll
+    default: true
 
 commands:
   trolled:
@@ -43,5 +46,6 @@ commands:
   barrelroll:
     description: Do a barrel roll.
     usage: /barrelroll <Player>
-
-      
+  superTroll:
+    description: Tells the server your a Super Troll
+    usage: /superTroll
