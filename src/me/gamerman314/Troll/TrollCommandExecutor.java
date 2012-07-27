@@ -144,30 +144,60 @@ public class TrollCommandExecutor implements CommandExecutor {
 
             }
         }
-        
-         if(cmd.getName().equalsIgnoreCase("trolledAll"))
-            if(sender instanceof Player)
-            {
-                if(player.hasPermission("troll.trolled.all"))
-                {
-                    if(args.length == 0) {
+
+        //command tralledall 
+        if (cmd.getName().equalsIgnoreCase("trolledAll")) {
+            if (sender instanceof Player) {
+                if (player.hasPermission("troll.trolled.all")) {
+                    if (args.length == 0) {
                         Bukkit.getServer().broadcastMessage((new StringBuilder()).append(player.getDisplayName()).append(ChatColor.GRAY).append(" trolled everybody.").toString());
                         return true;
                     }
-                    if(args.length > 0)
+                    if (args.length > 0) {
                         return false;
-                } else
-                {
+                    }
+                } else {
                     player.sendMessage((new StringBuilder()).append(ChatColor.RED).append("You dont have permission to that command").toString());
                     return true;
                 }
-            } else
-            {
+            } else {
                 sender.sendMessage((new StringBuilder()).append(ChatColor.RED).append("You have to be in the game to use this command you N00B").toString());
                 return true;
             }
+        }
         
-        
+        //on command "SuperTroll"
+        if (cmd.getName().equalsIgnoreCase("superTroll")) {
+            if ((sender instanceof Player)) {
+
+                if (player.hasPermission("troll.superTroll")) {
+                    if (args.length == 0) {
+                        Bukkit.getServer().broadcastMessage(player.getDisplayName() + ChatColor.GRAY + " is a Super Troll!!!");
+                        return true;
+                    } else if (args.length == 1) {
+                        if (Bukkit.getServer().getPlayer(args[0]) != null) {
+                            Player targetplayer = player.getServer().getPlayer(args[0]);
+                            Bukkit.getServer().broadcastMessage(targetplayer.getDisplayName() + ChatColor.GRAY + " is a Super Troll!!!");
+                            return true;
+                        } else {
+                            sender.sendMessage(ChatColor.RED + "There is no player Online with this name.");
+                            return true;
+                        }
+                    } else if (args.length > 1) {
+                        return false;
+                    }
+                } else {
+                    player.sendMessage(ChatColor.RED + "You dont have Permissions to that command");
+                    return true;
+                }
+            } else {
+                sender.sendMessage(ChatColor.RED + "You have to be in the game to use this command you N00B");
+                return true;
+            }
+
+        }
+
+
         return false;
     }
 }

@@ -6,22 +6,25 @@ main: me.gamerman314.Troll.Troll
 version: 1.2
 permissions:
   troll.trolol:
-    description: Alows you to call another player a trololol.
+    description: Allows you to call another player a trololol.
     default: true
   troll.kick:
-    description: Alows you to troll kick a player.
+    description: Allows you to troll kick a player.
     default: OP 
   troll.trolled:
-    description: Alows you to tell the server that you trolled someone.
+    description: Allows you to tell the server that you trolled someone.
     default: true
   troll.trolled.all:
-    decripton: Alows you to tell the server that you've trolled everyone.
+    decripton: Allows you to tell the server that you've trolled everyone.
     default: true
   troll.facepalm:
-    decripton: Alows you to say you facepalm.
+    decripton: Allows you to say you facepalm.
     default: true
   troll.barrelroll:
-    decripton: Alows you to do barrel rolls.
+    decripton: Allows you to do barrel rolls.
+    default: true
+  troll.superTroll:
+    dectription: Allows you to say your a Super Troll
     default: true
 
 commands:
@@ -43,5 +46,6 @@ commands:
   barrelroll:
     description: Do a barrel roll.
     usage: /barrelroll <Player>
-
-      
+  supertroll:
+    description: Tells the server your a Super Troll
+    usage: /superTroll <player>
