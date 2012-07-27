@@ -26,7 +26,7 @@ public class Troll extends JavaPlugin {
         getCommand("trolledall").setExecutor(trollExecutor);
         getCommand("facepalm").setExecutor(trollExecutor);
         getCommand("barrelroll").setExecutor(rollExecutor);
-        getCommand("superTroll").setExecutor(rollExecutor);
+        getCommand("supertroll").setExecutor(trollExecutor);
         pluginInfo("Enabled!");
     }
     
