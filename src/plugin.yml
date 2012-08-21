@@ -26,6 +26,9 @@ permissions:
   troll.superTroll:
     dectription: Allows you to say your a Super Troll
     default: true
+  troll.bab:
+    dectription: Allows you to troll ban a player
+    default: OP
 
 commands:
   trolled:
@@ -49,3 +52,6 @@ commands:
   supertroll:
     description: Tells the server your a Super Troll
     usage: /superTroll <player>
+  trollban:
+    description: Allows you to troll ban a player
+    usage: /trollban <player>
