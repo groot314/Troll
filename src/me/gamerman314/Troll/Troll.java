@@ -4,6 +4,8 @@
  */
 package me.gamerman314.Troll;
 
+import java.io.IOException;
+
 /**
  *
  * @author Geoffrey
@@ -18,6 +20,14 @@ public class Troll extends JavaPlugin {
     }
     
     public void onEnable() {
+    	
+    	try {
+    	    Metrics metrics = new Metrics(this);
+    	    metrics.start();
+    	} catch (IOException e) {
+    	    // Failed to submit the stats :-(
+    	}
+    	
         trollExecutor = new TrollCommandExecutor(this);
         rollExecutor = new RollCommandExecutor(this);
         getCommand("troll").setExecutor(trollExecutor);

@@ -62,7 +62,7 @@ public class TrollCommandExecutor implements CommandExecutor {
 
         }
 
-        //on Command "trollban"
+        //on Command "trollkick"
         if (cmd.getName().equalsIgnoreCase("trollkick")) {
             if ((sender instanceof Player)) {
 
@@ -92,6 +92,45 @@ public class TrollCommandExecutor implements CommandExecutor {
 
             }
         }
+        
+     // on Command "trollban"
+ 		if (cmd.getName().equalsIgnoreCase("trollban")) {
+ 			if ((sender instanceof Player)) {
+
+ 				if (player.hasPermission("troll.ban")) {
+ 					if (args.length == 0) {
+ 						return false;
+ 					} else if (args.length == 1) {
+ 						if (Bukkit.getServer().getPlayer(args[0]) != null) {
+ 							Player targetplayer = player.getServer().getPlayer(
+ 									args[0]);
+ 							targetplayer
+ 									.kickPlayer("The Ban Hammer Has Spoken");
+ 							Bukkit.getServer().broadcastMessage(
+ 									targetplayer.getDisplayName()
+ 											+ ChatColor.GRAY
+ 											+ " has been troll banned");
+ 							return true;
+ 						} else {
+ 							sender.sendMessage(ChatColor.RED
+ 									+ "There is no player Online with this name.");
+ 							return true;
+ 						}
+ 					} else if (args.length > 1) {
+ 						return false;
+ 					}
+ 				} else {
+ 					player.sendMessage(ChatColor.RED
+ 							+ "You dont have Permissions to that command");
+ 					return true;
+ 				}
+ 			} else {
+ 				sender.sendMessage(ChatColor.RED
+ 						+ "You have to be in the game to use this command you N00B");
+ 				return true;
+
+ 			}
+ 		}
 
         //command trolled
         if (cmd.getName().equalsIgnoreCase("trolled")) {

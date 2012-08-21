@@ -1,6 +1,3 @@
-#Author Groot314
-#Modification from 1.1.1 to 1.2 done by Zordain
-
 name: Troll
 main: me.gamerman314.Troll.Troll
 version: 1.3
@@ -15,17 +12,20 @@ permissions:
     description: Allows you to tell the server that you trolled someone.
     default: true
   troll.trolled.all:
-    decripton: Allows you to tell the server that you've trolled everyone.
+    description: Allows you to tell the server that you've trolled everyone.
     default: true
   troll.facepalm:
-    decripton: Allows you to say you facepalm.
+    description: Allows you to say you facepalm.
     default: true
   troll.barrelroll:
-    decripton: Allows you to do barrel rolls.
+    description: Allows you to do barrel rolls.
     default: true
   troll.superTroll:
-    dectription: Allows you to say your a Super Troll
+    description: Allows you to say your a Super Troll
     default: true
+  troll.ban:
+    description: Allows you to troll ban a player
+    default: OP
 
 commands:
   trolled:
@@ -49,3 +49,6 @@ commands:
   supertroll:
     description: Tells the server your a Super Troll
     usage: /superTroll <player>
+  trollban:
+    description: Allows you to troll ban a player
+    usage: /trollban <player>
