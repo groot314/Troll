@@ -30,7 +30,6 @@ public class TrollCommandExecutor implements CommandExecutor {
             player = (Player) sender;
         }
 
-
         //on command "Troll"
         if (cmd.getName().equalsIgnoreCase("troll")) {
             if ((sender instanceof Player)) {
