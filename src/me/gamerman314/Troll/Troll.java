@@ -46,7 +46,7 @@ public class Troll extends JavaPlugin {
     }
     
     public static void pluginInfo(String message) {
-        String v = "1.4.1";
+        String v = "1.4.2";
         System.out.println((new StringBuilder()).append("[Troll] Troll Plugin ").append(v).append(" ").append(message).toString());
     }
     private TrollCommandExecutor trollExecutor;
