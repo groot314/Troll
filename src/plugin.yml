@@ -1,6 +1,6 @@
 name: Troll
 main: me.gamerman314.Troll.Troll
-version: 1.4.1
+version: 1.4.2
 permissions:
   troll.trolol:
     description: Allows you to call another player a trololol.
